@@ -1,5 +1,5 @@
 
-//  EventCreatorViewController.swift
+//  ScheduleCreatorViewController.swift
 //  Schedule
 //
 //  Created by Velislava Yanchina on 9/3/16.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-class EventCreatorViewController: UIViewController {
+class ScheduleCreatorViewController: UIViewController {
     
-    var viewModel : EventCreatorViewViewModel?
+    var viewModel : SchduleCreatorViewViewModel?
     var selectedDate : Dynamic<NSDate>?
     
     @IBOutlet weak var beginDateLabel: UILabel!

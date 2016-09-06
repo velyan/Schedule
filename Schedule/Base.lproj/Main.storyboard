@@ -29,7 +29,7 @@
         <!--Schedule-->
         <scene sceneID="LR3-sB-TQL">
             <objects>
-                <viewController storyboardIdentifier="EventCreatorViewController" id="uIb-If-HSb" customClass="EventCreatorViewController" customModule="Schedule" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EventCreatorViewController" id="uIb-If-HSb" customClass="ScheduleCreatorViewController" customModule="Schedule" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eHn-My-pRw"/>
                         <viewControllerLayoutGuide type="bottom" id="3ki-TL-8xZ"/>

@@ -10,8 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    private lazy var defaultModel : EventModel = {
-        let model = EventModel(beginDate: NSDate())
+    private lazy var defaultModel : ScheduleModel = {
+        let model = ScheduleModel(beginDate: NSDate())
         return model
     }()
     
@@ -31,17 +31,15 @@ class ViewController: UIViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         super.prepareForSegue(segue, sender: sender)
-        print(segue.destinationViewController)
         if let navigationController = segue.destinationViewController as? UINavigationController {
-            if let destinationVC = navigationController.topViewController as? EventCreatorViewController {
-                destinationVC.viewModel = newViewModel(defaultModel) as? EventCreatorViewViewModel
+            if let destinationVC = navigationController.topViewController as? ScheduleCreatorViewController {
+                destinationVC.viewModel = newViewModel(defaultModel) as? SchduleCreatorViewViewModel
             }
         }
-
     }
     
     func newViewModel(model: AnyObject) -> AnyObject {
-        let viewModel = EventCreatorViewViewModel(model: defaultModel)
+        let viewModel = SchduleCreatorViewViewModel(model: defaultModel)
         return viewModel
     }
 }

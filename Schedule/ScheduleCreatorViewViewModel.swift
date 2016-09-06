@@ -1,5 +1,5 @@
 //
-//  EventCreatorViewModel.swift
+//  SchduleCreatorViewModel.swift
 //  Schedule
 //
 //  Created by Velislava Yanchina on 9/3/16.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class EventCreatorViewViewModel : BaseViewModel {
+class SchduleCreatorViewViewModel : BaseViewModel {
     
     private(set) var beginDate : Dynamic<String?> = Dynamic(nil)
     private(set) var endDate: Dynamic<String?> = Dynamic(nil)
@@ -25,7 +25,7 @@ class EventCreatorViewViewModel : BaseViewModel {
     }
     
     static func new(model: AnyObject?) -> BaseViewModel {
-        return EventCreatorViewViewModel.self(model: model)
+        return SchduleCreatorViewViewModel.self(model: model)
     }
     
     init(model: AnyObject?) {
@@ -38,8 +38,8 @@ class EventCreatorViewViewModel : BaseViewModel {
     }
 
     private func didSetModel(model: AnyObject?) {
-        if let event = model as? EventModel {
-            date.value = event.beginDate
+        if let schedule = model as? ScheduleModel {
+            date.value = schedule.beginDate
         }
     }
     
@@ -59,9 +59,9 @@ class EventCreatorViewViewModel : BaseViewModel {
     }
     
     private func updateModel(beginDate: NSDate?, endDate: NSDate?) {
-        if let event = model as? EventModel {
-            event.beginDate = beginDate
-            event.endDate = endDate
+        if let schdule = model as? ScheduleModel {
+            schdule.beginDate = beginDate
+            schdule.endDate = endDate
         }
     }
 }

@@ -1,5 +1,5 @@
 //
-//  EventModel.swift
+//  ScheduleModel.swift
 //  Schedule
 //
 //  Created by Velislava Yanchina on 9/3/16.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class EventModel : NSObject {
+class ScheduleModel : NSObject {
     
     var beginDate: NSDate?
     var endDate: NSDate?
