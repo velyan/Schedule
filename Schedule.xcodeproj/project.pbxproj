@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E33B99201D7ADA93003D344B /* EventCreatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33B991F1D7ADA93003D344B /* EventCreatorViewController.swift */; };
+		E33B99221D7ADB7F003D344B /* EventCreatorViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33B99211D7ADB7F003D344B /* EventCreatorViewViewModel.swift */; };
+		E33B99241D7AE1E9003D344B /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33B99231D7AE1E9003D344B /* EventModel.swift */; };
+		E33B99281D7B0B8A003D344B /* DateTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33B99271D7B0B8A003D344B /* DateTransformer.swift */; };
+		E33B992D1D7CA437003D344B /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33B992C1D7CA437003D344B /* Dynamic.swift */; };
+		E38F63C31D7F0E5C00A6F3B0 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38F63C21D7F0E5C00A6F3B0 /* BaseViewModel.swift */; };
+		E38F63C51D7F0E6800A6F3B0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38F63C41D7F0E6800A6F3B0 /* BaseViewController.swift */; };
 		E3F5F80A1D7AD3EE003D1917 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F5F8091D7AD3EE003D1917 /* AppDelegate.swift */; };
 		E3F5F80C1D7AD3EE003D1917 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F5F80B1D7AD3EE003D1917 /* ViewController.swift */; };
 		E3F5F80F1D7AD3EE003D1917 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3F5F80D1D7AD3EE003D1917 /* Main.storyboard */; };
@@ -26,6 +33,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E33B991F1D7ADA93003D344B /* EventCreatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCreatorViewController.swift; sourceTree = "<group>"; };
+		E33B99211D7ADB7F003D344B /* EventCreatorViewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCreatorViewViewModel.swift; sourceTree = "<group>"; };
+		E33B99231D7AE1E9003D344B /* EventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
+		E33B99271D7B0B8A003D344B /* DateTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTransformer.swift; sourceTree = "<group>"; };
+		E33B992C1D7CA437003D344B /* Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
+		E38F63C21D7F0E5C00A6F3B0 /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		E38F63C41D7F0E6800A6F3B0 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		E3F5F8061D7AD3ED003D1917 /* Schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Schedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3F5F8091D7AD3EE003D1917 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3F5F80B1D7AD3EE003D1917 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +70,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E33B99261D7AE21A003D344B /* Event Creation */ = {
+			isa = PBXGroup;
+			children = (
+				E33B991F1D7ADA93003D344B /* EventCreatorViewController.swift */,
+				E33B99211D7ADB7F003D344B /* EventCreatorViewViewModel.swift */,
+				E33B99231D7AE1E9003D344B /* EventModel.swift */,
+			);
+			name = "Event Creation";
+			sourceTree = "<group>";
+		};
+		E33B992A1D7CA409003D344B /* Transformers */ = {
+			isa = PBXGroup;
+			children = (
+				E33B99271D7B0B8A003D344B /* DateTransformer.swift */,
+			);
+			name = Transformers;
+			sourceTree = "<group>";
+		};
+		E33B992B1D7CA41D003D344B /* Bindings */ = {
+			isa = PBXGroup;
+			children = (
+				E33B992C1D7CA437003D344B /* Dynamic.swift */,
+			);
+			name = Bindings;
+			sourceTree = "<group>";
+		};
+		E38F63C11D7F0E4400A6F3B0 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				E38F63C21D7F0E5C00A6F3B0 /* BaseViewModel.swift */,
+				E38F63C41D7F0E6800A6F3B0 /* BaseViewController.swift */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
 		E3F5F7FD1D7AD3ED003D1917 = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +128,10 @@
 			children = (
 				E3F5F8091D7AD3EE003D1917 /* AppDelegate.swift */,
 				E3F5F80B1D7AD3EE003D1917 /* ViewController.swift */,
+				E38F63C11D7F0E4400A6F3B0 /* Core */,
+				E33B992B1D7CA41D003D344B /* Bindings */,
+				E33B992A1D7CA409003D344B /* Transformers */,
+				E33B99261D7AE21A003D344B /* Event Creation */,
 				E3F5F80D1D7AD3EE003D1917 /* Main.storyboard */,
 				E3F5F8101D7AD3EE003D1917 /* Assets.xcassets */,
 				E3F5F8121D7AD3EE003D1917 /* LaunchScreen.storyboard */,
@@ -199,8 +252,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E33B99221D7ADB7F003D344B /* EventCreatorViewViewModel.swift in Sources */,
+				E33B99281D7B0B8A003D344B /* DateTransformer.swift in Sources */,
 				E3F5F80C1D7AD3EE003D1917 /* ViewController.swift in Sources */,
+				E33B992D1D7CA437003D344B /* Dynamic.swift in Sources */,
 				E3F5F80A1D7AD3EE003D1917 /* AppDelegate.swift in Sources */,
+				E33B99241D7AE1E9003D344B /* EventModel.swift in Sources */,
+				E38F63C31D7F0E5C00A6F3B0 /* BaseViewModel.swift in Sources */,
+				E33B99201D7ADA93003D344B /* EventCreatorViewController.swift in Sources */,
+				E38F63C51D7F0E6800A6F3B0 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +390,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Schedule/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = velyan.Schedule;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -341,6 +402,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Schedule/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = velyan.Schedule;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -390,6 +452,7 @@
 				E3F5F8251D7AD3EE003D1917 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E3F5F8261D7AD3EE003D1917 /* Build configuration list for PBXNativeTarget "ScheduleTests" */ = {
 			isa = XCConfigurationList;
@@ -398,6 +461,7 @@
 				E3F5F8281D7AD3EE003D1917 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
