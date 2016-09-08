@@ -9,18 +9,13 @@
 import Foundation
 import CoreGraphics
 
-protocol DatePickerViewModel {
-    var minDate: Dynamic<NSDate> { get }
-}
-
-class ScheduleCreatorDatePickerViewViewModel : BaseViewModel,BaseViewModelPresentation, DatePickerViewModel {
+class ScheduleCreatorDatePickerViewViewModel : BaseViewModel {
     
-    var model: Dynamic<AnyObject?>
-    var minDate: Dynamic<NSDate> = Dynamic(NSDate())
-    var height: Dynamic<CGFloat> = Dynamic(216)
-    
-    init(model: AnyObject?) {
-        self.model = Dynamic(model)
+    private(set) var minDate: Dynamic<NSDate> = Dynamic(NSDate())
+    override var height: Dynamic<CGFloat> {
+        get {
+            return Dynamic(216)
+        }
+        set{}
     }
-
 }

@@ -8,8 +8,8 @@
 
 import UIKit
 
-let kScheduleCreatorDateViewCell = "ScheduleCreatorDateViewCell"
-let kScheduleCreatorDatePickerCell = "ScheduleCreatorDatePickerCell"
+let kScheduleCreatorDateViewCellIdentifier = "ScheduleCreatorDateViewCell"
+let kScheduleCreatorDatePickerCellIdentifier = "ScheduleCreatorDatePickerCell"
 
 class ScheduleCreatorViewController: UIViewController, BaseView, UITableViewDelegate, UITableViewDataSource {
     
@@ -19,13 +19,21 @@ class ScheduleCreatorViewController: UIViewController, BaseView, UITableViewDele
         (viewModel as? ScheduleCreatorViewViewModel)?.reset()
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        (viewModel as? ScheduleCreatorViewViewModel)?.save()
+    }
+    
     //MARK: UITableViewDataSource
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ((viewModel as? ScheduleCreatorViewViewModel)?.children.count)!
+        if let viewModels = (viewModel as? BaseViewModelHierarchy)?.children {
+            return viewModels.count
+        }
+        return 0
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let identifier = (indexPath.item == 1) ? kScheduleCreatorDatePickerCell : kScheduleCreatorDateViewCell
+        let identifier = (indexPath.item == 1) ? kScheduleCreatorDatePickerCellIdentifier : kScheduleCreatorDateViewCellIdentifier
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier   , forIndexPath: indexPath)
         var view = cell as! BaseView
         view.viewModel = (viewModel as? ScheduleCreatorViewViewModel)?.children[indexPath.item]

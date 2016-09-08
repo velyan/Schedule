@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import CoreData
 
-class ScheduleModel {
-    var beginDate: NSDate?
-    var endDate: NSDate?
+class ScheduleModel : NSManagedObject {
+    @NSManaged var beginDate: NSDate?
+    @NSManaged var endDate: NSDate?
 }

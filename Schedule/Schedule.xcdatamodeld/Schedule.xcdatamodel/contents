@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="16A304a" minimumToolsVersion="Xcode 7.0">
+    <entity name="ScheduleModel" representedClassName=".ScheduleModel" syncable="YES">
+        <attribute name="beginDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="endDate" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="ScheduleModel" positionX="-63" positionY="-18" width="128" height="75"/>
+    </elements>
+</model>

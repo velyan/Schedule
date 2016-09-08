@@ -7,29 +7,35 @@
 //
 
 import Foundation
+import CoreData
+import UIKit
 
-class ScheduleCreatorViewViewModel : BaseViewModel, BaseViewModelHierarchy {
+class ScheduleCreatorViewViewModel : BaseViewModel {
     
-    static private var defaultModel : ScheduleModel {
+    private var defaultModel : ScheduleModel {
         get {
-            let model = ScheduleModel()
+            let context = self.dataController.managedObjectContext!
+            let model = NSEntityDescription.insertNewObjectForEntityForName("ScheduleModel",
+                                                                            inManagedObjectContext: context) as! ScheduleModel
             model.beginDate = NSDate()
             return model
         }
     }
     
-    var model: Dynamic<AnyObject?>
-    var children: Array<BaseViewModel> = Array<BaseViewModel>()
-    
-    init(model: AnyObject?) {
-        let newModel = (model == nil) ? ScheduleCreatorViewViewModel.defaultModel : model
+    override init(model: AnyObject?) {
+        super.init(model: model)
+        let newModel = (model == nil) ? self.defaultModel : model
         self.model = Dynamic(newModel)
         createChildren()
         configureBindings()
     }
     
     func reset() {
-        self.model.value = ScheduleCreatorViewViewModel.defaultModel
+        self.model.value = self.defaultModel
+    }
+    
+    func save() {
+        self.dataController.save()
     }
     
     private func configureBindings() {

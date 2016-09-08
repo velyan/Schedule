@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E32FED011D81741B0070D0CF /* Schedule.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E32FECFF1D81741B0070D0CF /* Schedule.xcdatamodeld */; };
+		E32FED031D8174820070D0CF /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32FED021D8174820070D0CF /* DataController.swift */; };
+		E32FED081D81AFAA0070D0CF /* OverviewViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32FED071D81AFAA0070D0CF /* OverviewViewViewModel.swift */; };
+		E32FED0A1D81B36B0070D0CF /* OverviewDetailViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32FED091D81B36B0070D0CF /* OverviewDetailViewViewModel.swift */; };
+		E32FED0C1D81B8D90070D0CF /* OverviewDetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32FED0B1D81B8D90070D0CF /* OverviewDetailViewCell.swift */; };
 		E33B99201D7ADA93003D344B /* ScheduleCreatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33B991F1D7ADA93003D344B /* ScheduleCreatorViewController.swift */; };
 		E33B99221D7ADB7F003D344B /* ScheduleCreatorViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33B99211D7ADB7F003D344B /* ScheduleCreatorViewViewModel.swift */; };
 		E33B99241D7AE1E9003D344B /* ScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33B99231D7AE1E9003D344B /* ScheduleModel.swift */; };
@@ -19,7 +24,7 @@
 		E39C30AF1D801B1F00F68F3C /* ScheduleCreatorDateViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39C30AE1D801B1F00F68F3C /* ScheduleCreatorDateViewCell.swift */; };
 		E39C30B51D8021CA00F68F3C /* ScheduleCreatorDatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39C30B41D8021CA00F68F3C /* ScheduleCreatorDatePickerCell.swift */; };
 		E3F5F80A1D7AD3EE003D1917 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F5F8091D7AD3EE003D1917 /* AppDelegate.swift */; };
-		E3F5F80C1D7AD3EE003D1917 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F5F80B1D7AD3EE003D1917 /* ViewController.swift */; };
+		E3F5F80C1D7AD3EE003D1917 /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F5F80B1D7AD3EE003D1917 /* OverviewViewController.swift */; };
 		E3F5F80F1D7AD3EE003D1917 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3F5F80D1D7AD3EE003D1917 /* Main.storyboard */; };
 		E3F5F8111D7AD3EE003D1917 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3F5F8101D7AD3EE003D1917 /* Assets.xcassets */; };
 		E3F5F8141D7AD3EE003D1917 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3F5F8121D7AD3EE003D1917 /* LaunchScreen.storyboard */; };
@@ -37,6 +42,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E32FED001D81741B0070D0CF /* Schedule.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Schedule.xcdatamodel; sourceTree = "<group>"; };
+		E32FED021D8174820070D0CF /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		E32FED071D81AFAA0070D0CF /* OverviewViewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewViewViewModel.swift; sourceTree = "<group>"; };
+		E32FED091D81B36B0070D0CF /* OverviewDetailViewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewDetailViewViewModel.swift; sourceTree = "<group>"; };
+		E32FED0B1D81B8D90070D0CF /* OverviewDetailViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewDetailViewCell.swift; sourceTree = "<group>"; };
 		E33B991F1D7ADA93003D344B /* ScheduleCreatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleCreatorViewController.swift; sourceTree = "<group>"; };
 		E33B99211D7ADB7F003D344B /* ScheduleCreatorViewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleCreatorViewViewModel.swift; sourceTree = "<group>"; };
 		E33B99231D7AE1E9003D344B /* ScheduleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleModel.swift; sourceTree = "<group>"; };
@@ -50,7 +60,7 @@
 		E39C30B41D8021CA00F68F3C /* ScheduleCreatorDatePickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleCreatorDatePickerCell.swift; sourceTree = "<group>"; };
 		E3F5F8061D7AD3ED003D1917 /* Schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Schedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3F5F8091D7AD3EE003D1917 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E3F5F80B1D7AD3EE003D1917 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E3F5F80B1D7AD3EE003D1917 /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
 		E3F5F80E1D7AD3EE003D1917 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E3F5F8101D7AD3EE003D1917 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3F5F8131D7AD3EE003D1917 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -78,6 +88,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E32FED041D81AF6E0070D0CF /* Overview */ = {
+			isa = PBXGroup;
+			children = (
+				E32FED061D81AF820070D0CF /* View Model */,
+				E32FED051D81AF7B0070D0CF /* View */,
+			);
+			name = Overview;
+			sourceTree = "<group>";
+		};
+		E32FED051D81AF7B0070D0CF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E3F5F80B1D7AD3EE003D1917 /* OverviewViewController.swift */,
+				E32FED0B1D81B8D90070D0CF /* OverviewDetailViewCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		E32FED061D81AF820070D0CF /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				E32FED071D81AFAA0070D0CF /* OverviewViewViewModel.swift */,
+				E32FED091D81B36B0070D0CF /* OverviewDetailViewViewModel.swift */,
+			);
+			name = "View Model";
+			sourceTree = "<group>";
+		};
 		E33B99261D7AE21A003D344B /* Schedule Creation */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,12 +200,14 @@
 			isa = PBXGroup;
 			children = (
 				E3F5F8091D7AD3EE003D1917 /* AppDelegate.swift */,
-				E3F5F80B1D7AD3EE003D1917 /* ViewController.swift */,
+				E32FED021D8174820070D0CF /* DataController.swift */,
+				E32FED041D81AF6E0070D0CF /* Overview */,
 				E38F63C11D7F0E4400A6F3B0 /* Core */,
 				E33B992B1D7CA41D003D344B /* Bindings */,
 				E33B992A1D7CA409003D344B /* Transformers */,
 				E33B99261D7AE21A003D344B /* Schedule Creation */,
 				E3F5F80D1D7AD3EE003D1917 /* Main.storyboard */,
+				E32FECFF1D81741B0070D0CF /* Schedule.xcdatamodeld */,
 				E3F5F8101D7AD3EE003D1917 /* Assets.xcassets */,
 				E3F5F8121D7AD3EE003D1917 /* LaunchScreen.storyboard */,
 				E3F5F8151D7AD3EE003D1917 /* Info.plist */,
@@ -290,13 +329,18 @@
 			files = (
 				E33B99221D7ADB7F003D344B /* ScheduleCreatorViewViewModel.swift in Sources */,
 				E33B99281D7B0B8A003D344B /* DateTransformer.swift in Sources */,
+				E32FED0A1D81B36B0070D0CF /* OverviewDetailViewViewModel.swift in Sources */,
 				E38F63CC1D7F21E500A6F3B0 /* ScheduleCreatorDatePickerViewViewModel.swift in Sources */,
-				E3F5F80C1D7AD3EE003D1917 /* ViewController.swift in Sources */,
+				E32FED011D81741B0070D0CF /* Schedule.xcdatamodeld in Sources */,
+				E32FED081D81AFAA0070D0CF /* OverviewViewViewModel.swift in Sources */,
+				E3F5F80C1D7AD3EE003D1917 /* OverviewViewController.swift in Sources */,
 				E33B992D1D7CA437003D344B /* Dynamic.swift in Sources */,
+				E32FED0C1D81B8D90070D0CF /* OverviewDetailViewCell.swift in Sources */,
 				E39C30AF1D801B1F00F68F3C /* ScheduleCreatorDateViewCell.swift in Sources */,
 				E39C30B51D8021CA00F68F3C /* ScheduleCreatorDatePickerCell.swift in Sources */,
 				E38F63CA1D7F21CB00A6F3B0 /* ScheduleCreatorDateViewViewModel.swift in Sources */,
 				E3F5F80A1D7AD3EE003D1917 /* AppDelegate.swift in Sources */,
+				E32FED031D8174820070D0CF /* DataController.swift in Sources */,
 				E33B99241D7AE1E9003D344B /* ScheduleModel.swift in Sources */,
 				E38F63C31D7F0E5C00A6F3B0 /* BaseViewModel.swift in Sources */,
 				E33B99201D7ADA93003D344B /* ScheduleCreatorViewController.swift in Sources */,
@@ -504,6 +548,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E32FECFF1D81741B0070D0CF /* Schedule.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E32FED001D81741B0070D0CF /* Schedule.xcdatamodel */,
+			);
+			currentVersion = E32FED001D81741B0070D0CF /* Schedule.xcdatamodel */;
+			path = Schedule.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E3F5F7FE1D7AD3ED003D1917 /* Project object */;
 }

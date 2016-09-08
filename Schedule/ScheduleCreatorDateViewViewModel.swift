@@ -9,21 +9,19 @@
 import Foundation
 import CoreGraphics
 
-protocol DateViewModel {
-    var date: Dynamic<String?> { get }
-    var label: Dynamic<String?> { get }
-}
-
-class ScheduleCreatorDateViewViewModel : BaseViewModel, BaseViewModelPresentation, DateViewModel {
+class ScheduleCreatorDateViewViewModel : BaseViewModel {
     
-    private let dateTransformer: DateTransformer = DateTransformer()
-    var model: Dynamic<AnyObject?>
-    var date: Dynamic<String?> = Dynamic(nil)
-    var label: Dynamic<String?> = Dynamic(nil)
-    var height: Dynamic<CGFloat> = Dynamic(100)
+    private(set) var date: Dynamic<String?> = Dynamic(nil)
+    private(set) var label: Dynamic<String?> = Dynamic(nil)
+    override var height: Dynamic<CGFloat> {
+        get {
+            return Dynamic(100)
+        }
+        set{}
+    }
     
-    init(model: AnyObject?) {
-        self.model = Dynamic(model)
+    override init(model: AnyObject?) {
+        super.init(model: model)
         self.model.bindAndFire{ [unowned self] in
             let dateString = self.dateTransformer.transformedValue($0 as? NSDate) as? String
             self.date.value = dateString
