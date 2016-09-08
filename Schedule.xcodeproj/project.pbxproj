@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E33B99201D7ADA93003D344B /* SchduleCreatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33B991F1D7ADA93003D344B /* SchduleCreatorViewController.swift */; };
+		E33B99201D7ADA93003D344B /* ScheduleCreatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33B991F1D7ADA93003D344B /* ScheduleCreatorViewController.swift */; };
 		E33B99221D7ADB7F003D344B /* ScheduleCreatorViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33B99211D7ADB7F003D344B /* ScheduleCreatorViewViewModel.swift */; };
 		E33B99241D7AE1E9003D344B /* ScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33B99231D7AE1E9003D344B /* ScheduleModel.swift */; };
 		E33B99281D7B0B8A003D344B /* DateTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33B99271D7B0B8A003D344B /* DateTransformer.swift */; };
 		E33B992D1D7CA437003D344B /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33B992C1D7CA437003D344B /* Dynamic.swift */; };
 		E38F63C31D7F0E5C00A6F3B0 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38F63C21D7F0E5C00A6F3B0 /* BaseViewModel.swift */; };
-		E38F63C51D7F0E6800A6F3B0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38F63C41D7F0E6800A6F3B0 /* BaseViewController.swift */; };
+		E38F63C51D7F0E6800A6F3B0 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38F63C41D7F0E6800A6F3B0 /* BaseView.swift */; };
+		E38F63CA1D7F21CB00A6F3B0 /* ScheduleCreatorDateViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38F63C91D7F21CB00A6F3B0 /* ScheduleCreatorDateViewViewModel.swift */; };
+		E38F63CC1D7F21E500A6F3B0 /* ScheduleCreatorDatePickerViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38F63CB1D7F21E500A6F3B0 /* ScheduleCreatorDatePickerViewViewModel.swift */; };
+		E39C30AF1D801B1F00F68F3C /* ScheduleCreatorDateViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39C30AE1D801B1F00F68F3C /* ScheduleCreatorDateViewCell.swift */; };
+		E39C30B51D8021CA00F68F3C /* ScheduleCreatorDatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39C30B41D8021CA00F68F3C /* ScheduleCreatorDatePickerCell.swift */; };
 		E3F5F80A1D7AD3EE003D1917 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F5F8091D7AD3EE003D1917 /* AppDelegate.swift */; };
 		E3F5F80C1D7AD3EE003D1917 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F5F80B1D7AD3EE003D1917 /* ViewController.swift */; };
 		E3F5F80F1D7AD3EE003D1917 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3F5F80D1D7AD3EE003D1917 /* Main.storyboard */; };
@@ -33,13 +37,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E33B991F1D7ADA93003D344B /* SchduleCreatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchduleCreatorViewController.swift; sourceTree = "<group>"; };
+		E33B991F1D7ADA93003D344B /* ScheduleCreatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleCreatorViewController.swift; sourceTree = "<group>"; };
 		E33B99211D7ADB7F003D344B /* ScheduleCreatorViewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleCreatorViewViewModel.swift; sourceTree = "<group>"; };
 		E33B99231D7AE1E9003D344B /* ScheduleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleModel.swift; sourceTree = "<group>"; };
 		E33B99271D7B0B8A003D344B /* DateTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTransformer.swift; sourceTree = "<group>"; };
 		E33B992C1D7CA437003D344B /* Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
 		E38F63C21D7F0E5C00A6F3B0 /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
-		E38F63C41D7F0E6800A6F3B0 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		E38F63C41D7F0E6800A6F3B0 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		E38F63C91D7F21CB00A6F3B0 /* ScheduleCreatorDateViewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleCreatorDateViewViewModel.swift; sourceTree = "<group>"; };
+		E38F63CB1D7F21E500A6F3B0 /* ScheduleCreatorDatePickerViewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleCreatorDatePickerViewViewModel.swift; sourceTree = "<group>"; };
+		E39C30AE1D801B1F00F68F3C /* ScheduleCreatorDateViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleCreatorDateViewCell.swift; sourceTree = "<group>"; };
+		E39C30B41D8021CA00F68F3C /* ScheduleCreatorDatePickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleCreatorDatePickerCell.swift; sourceTree = "<group>"; };
 		E3F5F8061D7AD3ED003D1917 /* Schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Schedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3F5F8091D7AD3EE003D1917 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3F5F80B1D7AD3EE003D1917 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -73,9 +81,9 @@
 		E33B99261D7AE21A003D344B /* Schedule Creation */ = {
 			isa = PBXGroup;
 			children = (
-				E33B991F1D7ADA93003D344B /* SchduleCreatorViewController.swift */,
-				E33B99211D7ADB7F003D344B /* ScheduleCreatorViewViewModel.swift */,
-				E33B99231D7AE1E9003D344B /* ScheduleModel.swift */,
+				E38F63C61D7F212000A6F3B0 /* View */,
+				E38F63C71D7F212600A6F3B0 /* View Model */,
+				E38F63C81D7F213100A6F3B0 /* Model */,
 			);
 			name = "Schedule Creation";
 			sourceTree = "<group>";
@@ -100,9 +108,37 @@
 			isa = PBXGroup;
 			children = (
 				E38F63C21D7F0E5C00A6F3B0 /* BaseViewModel.swift */,
-				E38F63C41D7F0E6800A6F3B0 /* BaseViewController.swift */,
+				E38F63C41D7F0E6800A6F3B0 /* BaseView.swift */,
 			);
 			name = Core;
+			sourceTree = "<group>";
+		};
+		E38F63C61D7F212000A6F3B0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E33B991F1D7ADA93003D344B /* ScheduleCreatorViewController.swift */,
+				E39C30AE1D801B1F00F68F3C /* ScheduleCreatorDateViewCell.swift */,
+				E39C30B41D8021CA00F68F3C /* ScheduleCreatorDatePickerCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		E38F63C71D7F212600A6F3B0 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				E33B99211D7ADB7F003D344B /* ScheduleCreatorViewViewModel.swift */,
+				E38F63C91D7F21CB00A6F3B0 /* ScheduleCreatorDateViewViewModel.swift */,
+				E38F63CB1D7F21E500A6F3B0 /* ScheduleCreatorDatePickerViewViewModel.swift */,
+			);
+			name = "View Model";
+			sourceTree = "<group>";
+		};
+		E38F63C81D7F213100A6F3B0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E33B99231D7AE1E9003D344B /* ScheduleModel.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		E3F5F7FD1D7AD3ED003D1917 = {
@@ -254,13 +290,17 @@
 			files = (
 				E33B99221D7ADB7F003D344B /* ScheduleCreatorViewViewModel.swift in Sources */,
 				E33B99281D7B0B8A003D344B /* DateTransformer.swift in Sources */,
+				E38F63CC1D7F21E500A6F3B0 /* ScheduleCreatorDatePickerViewViewModel.swift in Sources */,
 				E3F5F80C1D7AD3EE003D1917 /* ViewController.swift in Sources */,
 				E33B992D1D7CA437003D344B /* Dynamic.swift in Sources */,
+				E39C30AF1D801B1F00F68F3C /* ScheduleCreatorDateViewCell.swift in Sources */,
+				E39C30B51D8021CA00F68F3C /* ScheduleCreatorDatePickerCell.swift in Sources */,
+				E38F63CA1D7F21CB00A6F3B0 /* ScheduleCreatorDateViewViewModel.swift in Sources */,
 				E3F5F80A1D7AD3EE003D1917 /* AppDelegate.swift in Sources */,
 				E33B99241D7AE1E9003D344B /* ScheduleModel.swift in Sources */,
 				E38F63C31D7F0E5C00A6F3B0 /* BaseViewModel.swift in Sources */,
-				E33B99201D7ADA93003D344B /* SchduleCreatorViewController.swift in Sources */,
-				E38F63C51D7F0E6800A6F3B0 /* BaseViewController.swift in Sources */,
+				E33B99201D7ADA93003D344B /* ScheduleCreatorViewController.swift in Sources */,
+				E38F63C51D7F0E6800A6F3B0 /* BaseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

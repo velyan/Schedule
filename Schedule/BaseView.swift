@@ -6,6 +6,8 @@
 //  Copyright © 2016 Velislava Yanchina. All rights reserved.
 //
 
-protocol BaseViewController {
-    var viewModel : BaseViewModel? {get set}
+import CoreGraphics
+
+protocol BaseView {
+    var viewModel : BaseViewModel? { get set }
 }

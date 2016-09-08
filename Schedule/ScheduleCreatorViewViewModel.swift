@@ -8,60 +8,75 @@
 
 import Foundation
 
-class SchduleCreatorViewViewModel : BaseViewModel {
+class ScheduleCreatorViewViewModel : BaseViewModel, BaseViewModelHierarchy {
     
-    private(set) var beginDate : Dynamic<String?> = Dynamic(nil)
-    private(set) var endDate: Dynamic<String?> = Dynamic(nil)
-    private(set) var minBeginDate: Dynamic<NSDate> = Dynamic(NSDate())
-    private(set) var date: Dynamic<NSDate?> = Dynamic(nil)
-    private(set) var beginDateLabel: Dynamic<String> =  Dynamic(String.localizedStringWithFormat("Begin:", 0))
-    private(set) var endDateLabel: Dynamic<String>  = Dynamic(String.localizedStringWithFormat("End Date:", 0))
-    private let dateTransformer: DateTransformer = DateTransformer()
-    
-    var model: AnyObject? {
-        didSet {
-            didSetModel(model)
+    static private var defaultModel : ScheduleModel {
+        get {
+            let model = ScheduleModel()
+            model.beginDate = NSDate()
+            return model
         }
     }
     
-    static func new(model: AnyObject?) -> BaseViewModel {
-        return SchduleCreatorViewViewModel.self(model: model)
-    }
+    var model: Dynamic<AnyObject?>
+    var children: Array<BaseViewModel> = Array<BaseViewModel>()
     
     init(model: AnyObject?) {
-        self.model = model
-        beginDate = Dynamic(nil)
-        didSetModel(self.model)
-        date.bindAndFire { [unowned self] in
-            self.didSetDate($0)
+        let newModel = (model == nil) ? ScheduleCreatorViewViewModel.defaultModel : model
+        self.model = Dynamic(newModel)
+        createChildren()
+        configureBindings()
+    }
+    
+    func reset() {
+        self.model.value = ScheduleCreatorViewViewModel.defaultModel
+    }
+    
+    private func configureBindings() {
+        let filtered = children.filter { $0 as? ScheduleCreatorDatePickerViewViewModel != nil}
+        if let pickerVM = filtered.first {
+            self.model.bind {
+                if let beginDate = ($0 as? ScheduleModel)?.beginDate {
+                    pickerVM.model.value = beginDate
+                }
+            }
+            
+            pickerVM.model.bind { [unowned self] in
+                self.didSetDate($0 as? NSDate)
+            }
+        }
+        
+    }
+
+    private func createChildren() {
+        children = Array<BaseViewModel>()
+        if let schedule = model.value as? ScheduleModel {
+            let beginDateVM = ScheduleCreatorBeginDateViewViewModel(model: schedule.beginDate)
+            let pickerVM = ScheduleCreatorDatePickerViewViewModel(model: schedule.beginDate)
+            let endDateVM = ScheduleCreatorEndDateViewViewModel(model: schedule.endDate)
+            let viewModels: Array<BaseViewModel> = [beginDateVM, pickerVM, endDateVM]
+            children.appendContentsOf(viewModels)
         }
     }
 
-    private func didSetModel(model: AnyObject?) {
-        if let schedule = model as? ScheduleModel {
-            date.value = schedule.beginDate
-        }
-    }
-    
     private func didSetDate(date: NSDate?) {
         let endDate = date?.dateByAddingTimeInterval(60*60*24*7)
-        updateLabels(date, endDate: endDate)
         updateModel(date, endDate: endDate)
+        updateViewModels(date, endDate: endDate)
     }
-    
-    private func updateLabels(beginDate: NSDate?, endDate: NSDate?) {
-        if let begin = dateTransformer.transformedValue(beginDate) as? String {
-            self.beginDate.value = begin
-        }
-        if let end = dateTransformer.transformedValue(endDate) as? String {
-            self.endDate.value = end
-        }
-    }
-    
+
     private func updateModel(beginDate: NSDate?, endDate: NSDate?) {
-        if let schdule = model as? ScheduleModel {
-            schdule.beginDate = beginDate
-            schdule.endDate = endDate
+        if let schedule = model.value as? ScheduleModel {
+            schedule.beginDate = beginDate
+            schedule.endDate = endDate
         }
     }
+    
+    private func updateViewModels(beginDate: NSDate?, endDate: NSDate?) {
+        let beginVM = children.first
+        let endVM = children.last
+        beginVM?.model.value = beginDate
+        endVM?.model.value = endDate
+    }
+    
 }

@@ -8,12 +8,7 @@
 
 import Foundation
 
-class ScheduleModel : NSObject {
-    
+class ScheduleModel {
     var beginDate: NSDate?
     var endDate: NSDate?
-    
-    init(beginDate: NSDate) {
-        self.beginDate = beginDate
-    }
 }

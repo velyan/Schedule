@@ -10,11 +10,6 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    private lazy var defaultModel : ScheduleModel = {
-        let model = ScheduleModel(beginDate: NSDate())
-        return model
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -33,13 +28,13 @@ class ViewController: UIViewController {
         super.prepareForSegue(segue, sender: sender)
         if let navigationController = segue.destinationViewController as? UINavigationController {
             if let destinationVC = navigationController.topViewController as? ScheduleCreatorViewController {
-                destinationVC.viewModel = newViewModel(defaultModel) as? SchduleCreatorViewViewModel
+                destinationVC.viewModel = newViewModel(nil) as? ScheduleCreatorViewViewModel
             }
         }
     }
     
-    func newViewModel(model: AnyObject) -> AnyObject {
-        let viewModel = SchduleCreatorViewViewModel(model: defaultModel)
+    func newViewModel(model: AnyObject?) -> AnyObject? {
+        let viewModel = ScheduleCreatorViewViewModel(model: nil)
         return viewModel
     }
 }
