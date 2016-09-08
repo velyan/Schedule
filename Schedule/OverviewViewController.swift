@@ -30,7 +30,7 @@ class OverviewViewController: UIViewController, BaseView, UITableViewDataSource,
         super.prepareForSegue(segue, sender: sender)
         if let destinationVC = segue.destinationViewController as? ScheduleCreatorViewController {
             let selectedIndex = tableView.indexPathForSelectedRow?.item
-            destinationVC.viewModel = (viewModel as? OverviewViewViewModel)?.viewModelToPresent(selectedIndex)
+            destinationVC.viewModel = (viewModel as? OverviewViewViewModel)?.scheduleCreatorViewModelAtIndex(selectedIndex)
         }
     }
     
@@ -49,6 +49,17 @@ class OverviewViewController: UIViewController, BaseView, UITableViewDataSource,
         return cell
     }
     
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            (viewModel as? OverviewViewViewModel)?.deleteViewModelAtIndex(indexPath.item)
+            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        }
+    }
+    
     //MARK: UITableViewDelegate
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         let viewVM = (viewModel as? BaseViewModelHierarchy)
@@ -59,5 +70,7 @@ class OverviewViewController: UIViewController, BaseView, UITableViewDataSource,
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         performSegueWithIdentifier(kScheduleEditorPushSegueIdentifier, sender: self)
     }
+
+
 }
 

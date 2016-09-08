@@ -14,7 +14,7 @@ let kScheduleModelEntityName = "ScheduleModel"
 
 class OverviewViewViewModel: BaseViewModel {
 
-    private var models: [NSManagedObject]?
+    private var models: Array<NSManagedObject>?
     override init(model: AnyObject?) {
         super.init(model: model)
         reload()
@@ -27,12 +27,24 @@ class OverviewViewViewModel: BaseViewModel {
         }
     }
     
-    func viewModelToPresent(atIndex: Int?) -> BaseViewModel {
-        guard let index = atIndex where index < models?.count else {
+    func scheduleCreatorViewModelAtIndex(index: Int?) -> BaseViewModel {
+        guard let index = index where index < children.count else {
             return ScheduleCreatorViewViewModel(model: nil)
         }
-        let model = models![atIndex!]
+        let model = models![index]
         return ScheduleCreatorViewViewModel(model: model)
+    }
+    
+    func deleteViewModelAtIndex(index: Int) {
+        guard index < children.count else {
+            return
+        }
+        if let modelToDelete = children[index].model.value as? NSManagedObject {
+            dataController.managedObjectContext?.deleteObject(modelToDelete)
+            dataController.save()
+            models?.removeAtIndex(index)
+            children.removeAtIndex(index)
+        }
     }
     
     private func sortDescriptors() -> Array<NSSortDescriptor> {
