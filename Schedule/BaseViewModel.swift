@@ -7,8 +7,9 @@
 //
 
 import CoreGraphics
+import UIKit
 
-protocol BaseViewModel {
+protocol BaseViewModelContract {
     var model: Dynamic<AnyObject?> { get set }
 }
 
@@ -18,4 +19,22 @@ protocol BaseViewModelPresentation {
 
 protocol BaseViewModelHierarchy {
     var children: Array<BaseViewModel> { get }
+}
+
+class BaseViewModel: BaseViewModelContract, BaseViewModelHierarchy, BaseViewModelPresentation {
+    
+    lazy var dataController : DataController = {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        return appDelegate.dataController
+    }()
+    lazy var dateTransformer: DateTransformer = { return DateTransformer() }()
+
+    
+    var model: Dynamic<AnyObject?>
+    var children: Array<BaseViewModel> = Array<BaseViewModel>()
+    var height: Dynamic<CGFloat> = Dynamic(0)
+
+    init(model: AnyObject?) {
+        self.model = Dynamic(model)
+    }
 }

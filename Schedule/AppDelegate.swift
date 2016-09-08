@@ -12,12 +12,21 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    let dataController : DataController = DataController()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        
-        // Override point for customization after application launch
+        configureRootViewController()
         return true
+    }
+    
+    func configureRootViewController() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let rootViewController = storyboard.instantiateInitialViewController() as? UINavigationController
+        if let topViewController = rootViewController?.topViewController as? OverviewViewController {
+            topViewController.viewModel = OverviewViewViewModel(model: nil)
+            window?.rootViewController = rootViewController
+            window?.makeKeyAndVisible()
+        }
     }
 
     func applicationWillResignActive(application: UIApplication) {
