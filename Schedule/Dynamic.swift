@@ -7,16 +7,16 @@
 //
 
 class Dynamic<T> {
-    typealias Listener = T -> Void
+    typealias Listener = (T) -> Void
     var listeners: Array<Listener> = Array<Listener>()
     
-    func bind(listener: Listener?) {
+    func bind(_ listener: Listener?) {
         if let _ = listener {
             listeners.append(listener!)
         }
     }
     
-    func bindAndFire(listener: Listener?) {
+    func bindAndFire(_ listener: Listener?) {
         bind(listener)
         fire(value)
     }
@@ -31,7 +31,7 @@ class Dynamic<T> {
         value = v
     }
     
-    func fire(value: T){
+    func fire(_ value: T){
         for listener in listeners {
             listener(value)
         }

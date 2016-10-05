@@ -11,7 +11,7 @@ import CoreGraphics
 
 class ScheduleCreatorDatePickerViewViewModel : BaseViewModel {
     
-    private(set) var minDate: Dynamic<NSDate> = Dynamic(NSDate())
+    fileprivate(set) var minDate: Dynamic<Date> = Dynamic(Date())
     override var height: Dynamic<CGFloat> {
         get {
             return Dynamic(216)

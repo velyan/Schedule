@@ -8,10 +8,10 @@
 
 import Foundation
 
-class DateTransformer: NSValueTransformer {
+class DateTransformer: ValueTransformer {
     
-    private static let formatter: NSDateFormatter = {
-        let formatter = NSDateFormatter()
+    fileprivate static let formatter: DateFormatter = {
+        let formatter = DateFormatter()
         formatter.dateFormat = "dd MMM yyyy"
         return formatter
     }()
@@ -24,8 +24,8 @@ class DateTransformer: NSValueTransformer {
         return false
     }
     
-    override func transformedValue(value: AnyObject?) -> AnyObject? {
-        guard let date = value as? NSDate else { return nil }
-        return DateTransformer.self.formatter.stringFromDate(date)
+    override func transformedValue(_ value: Any?) -> Any? {
+        guard let date = value as? Date else { return nil }
+        return DateTransformer.self.formatter.string(from: date)
     }
 }

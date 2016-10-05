@@ -12,12 +12,12 @@ import UIKit
 
 class ScheduleCreatorViewViewModel : BaseViewModel {
     
-    private var defaultModel : ScheduleModel {
+    fileprivate var defaultModel : ScheduleModel {
         get {
             let context = self.dataController.managedObjectContext!
-            let model = NSEntityDescription.insertNewObjectForEntityForName("ScheduleModel",
-                                                                            inManagedObjectContext: context) as! ScheduleModel
-            model.beginDate = NSDate()
+            let model = NSEntityDescription.insertNewObject(forEntityName: "ScheduleModel",
+                                                                            into: context) as! ScheduleModel
+            model.beginDate = Date()
             return model
         }
     }
@@ -38,51 +38,51 @@ class ScheduleCreatorViewViewModel : BaseViewModel {
         self.dataController.save()
     }
     
-    private func configureBindings() {
+    fileprivate func configureBindings() {
         let filtered = children.filter { $0 as? ScheduleCreatorDatePickerViewViewModel != nil}
         if let pickerVM = filtered.first {
             self.model.bind {
                 if let beginDate = ($0 as? ScheduleModel)?.beginDate {
-                    pickerVM.model.value = beginDate
+                    pickerVM.model.value = beginDate as AnyObject?
                 }
             }
             
             pickerVM.model.bind { [unowned self] in
-                self.didSetDate($0 as? NSDate)
+                self.didSetDate($0 as? Date)
             }
         }
         
     }
 
-    private func createChildren() {
+    fileprivate func createChildren() {
         children = Array<BaseViewModel>()
         if let schedule = model.value as? ScheduleModel {
-            let beginDateVM = ScheduleCreatorBeginDateViewViewModel(model: schedule.beginDate)
-            let pickerVM = ScheduleCreatorDatePickerViewViewModel(model: schedule.beginDate)
-            let endDateVM = ScheduleCreatorEndDateViewViewModel(model: schedule.endDate)
+            let beginDateVM = ScheduleCreatorBeginDateViewViewModel(model: schedule.beginDate as AnyObject?)
+            let pickerVM = ScheduleCreatorDatePickerViewViewModel(model: schedule.beginDate as AnyObject?)
+            let endDateVM = ScheduleCreatorEndDateViewViewModel(model: schedule.endDate as AnyObject?)
             let viewModels: Array<BaseViewModel> = [beginDateVM, pickerVM, endDateVM]
-            children.appendContentsOf(viewModels)
+            children.append(contentsOf: viewModels)
         }
     }
 
-    private func didSetDate(date: NSDate?) {
-        let endDate = date?.dateByAddingTimeInterval(60*60*24*7)
+    fileprivate func didSetDate(_ date: Date?) {
+        let endDate = date?.addingTimeInterval(60*60*24*7)
         updateModel(date, endDate: endDate)
         updateViewModels(date, endDate: endDate)
     }
 
-    private func updateModel(beginDate: NSDate?, endDate: NSDate?) {
+    fileprivate func updateModel(_ beginDate: Date?, endDate: Date?) {
         if let schedule = model.value as? ScheduleModel {
             schedule.beginDate = beginDate
             schedule.endDate = endDate
         }
     }
     
-    private func updateViewModels(beginDate: NSDate?, endDate: NSDate?) {
+    fileprivate func updateViewModels(_ beginDate: Date?, endDate: Date?) {
         let beginVM = children.first
         let endVM = children.last
-        beginVM?.model.value = beginDate
-        endVM?.model.value = endDate
+        beginVM?.model.value = beginDate as AnyObject?
+        endVM?.model.value = endDate as AnyObject?
     }
     
 }

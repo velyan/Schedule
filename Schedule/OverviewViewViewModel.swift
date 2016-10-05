@@ -14,7 +14,7 @@ let kScheduleModelEntityName = "ScheduleModel"
 
 class OverviewViewViewModel: BaseViewModel {
 
-    private var models: Array<NSManagedObject>?
+    fileprivate var models: Array<NSManagedObject>?
     override init(model: AnyObject?) {
         super.init(model: model)
         reload()
@@ -27,33 +27,33 @@ class OverviewViewViewModel: BaseViewModel {
         }
     }
     
-    func scheduleCreatorViewModelAtIndex(index: Int?) -> BaseViewModel {
-        guard let index = index where index < children.count else {
+    func scheduleCreatorViewModelAtIndex(_ index: Int?) -> BaseViewModel {
+        guard let index = index , index < children.count else {
             return ScheduleCreatorViewViewModel(model: nil)
         }
         let model = models![index]
         return ScheduleCreatorViewViewModel(model: model)
     }
     
-    func deleteViewModelAtIndex(index: Int) {
+    func deleteViewModelAtIndex(_ index: Int) {
         guard index < children.count else {
             return
         }
         if let modelToDelete = children[index].model.value as? NSManagedObject {
-            dataController.managedObjectContext?.deleteObject(modelToDelete)
+            dataController.managedObjectContext?.delete(modelToDelete)
             dataController.save()
-            models?.removeAtIndex(index)
-            children.removeAtIndex(index)
+            models?.remove(at: index)
+            children.remove(at: index)
         }
     }
     
-    private func sortDescriptors() -> Array<NSSortDescriptor> {
+    fileprivate func sortDescriptors() -> Array<NSSortDescriptor> {
         let beginDateSort = NSSortDescriptor(key: "beginDate", ascending: true)
         let endDateSort = NSSortDescriptor(key: "endDate", ascending: true)
         return [beginDateSort, endDateSort]
     }
     
-    private func viewModels(models: Array<AnyObject>) -> Array<BaseViewModel> {
+    fileprivate func viewModels(_ models: Array<AnyObject>) -> Array<BaseViewModel> {
         var viewModels = Array<BaseViewModel>()
         for model in models {
             let detailViewModel = OverviewDetailViewViewModel(model: model)
