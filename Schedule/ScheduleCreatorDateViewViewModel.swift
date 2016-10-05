@@ -11,8 +11,8 @@ import CoreGraphics
 
 class ScheduleCreatorDateViewViewModel : BaseViewModel {
     
-    private(set) var date: Dynamic<String?> = Dynamic(nil)
-    private(set) var label: Dynamic<String?> = Dynamic(nil)
+    fileprivate(set) var date: Dynamic<String?> = Dynamic(nil)
+    fileprivate(set) var label: Dynamic<String?> = Dynamic(nil)
     override var height: Dynamic<CGFloat> {
         get {
             return Dynamic(100)
@@ -23,7 +23,7 @@ class ScheduleCreatorDateViewViewModel : BaseViewModel {
     override init(model: AnyObject?) {
         super.init(model: model)
         self.model.bindAndFire{ [unowned self] in
-            let dateString = self.dateTransformer.transformedValue($0 as? NSDate) as? String
+            let dateString = self.dateTransformer.transformedValue($0 as? Date) as? String
             self.date.value = dateString
         }
     }

@@ -24,7 +24,7 @@ protocol BaseViewModelHierarchy {
 class BaseViewModel: BaseViewModelContract, BaseViewModelHierarchy, BaseViewModelPresentation {
     
     lazy var dataController : DataController = {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate.dataController
     }()
     lazy var dateTransformer: DateTransformer = { return DateTransformer() }()

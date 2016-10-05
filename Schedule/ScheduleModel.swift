@@ -10,6 +10,6 @@ import Foundation
 import CoreData
 
 class ScheduleModel : NSManagedObject {
-    @NSManaged var beginDate: NSDate?
-    @NSManaged var endDate: NSDate?
+    @NSManaged var beginDate: Date?
+    @NSManaged var endDate: Date?
 }
